@@ -1,0 +1,2 @@
+FLASK_DEBUG=1
+FLSK_APP=hello.py
