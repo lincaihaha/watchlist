@@ -7,7 +7,7 @@ import click
 from werkzeug.security import generate_password_hash, check_password_hash # 用户密码校验
 from flask_login import LoginManager,login_user, logout_user # 用户登陆验证
 from flask_login import UserMixin,login_required, current_user# 用户模型继承  登陆验证时需要
-import click
+
 
 app=Flask(__name__)
 # 初始化扩展，传入程序实例 app   config会增大开销
@@ -17,6 +17,11 @@ app.config['SECRET_KEY'] = 'dev'  # 等同于 app.secret_key = 'dev'
 
 db=SQLAlchemy(app) # 实例化数据库
 login_manager = LoginManager(app)  # 实例化扩展类
+
+
+
+
+
 
 class User(db.Model,UserMixin):  # 表名将会是 user（自动生成，小写处理）
     id = db.Column(db.Integer, primary_key=True)  # 主键
